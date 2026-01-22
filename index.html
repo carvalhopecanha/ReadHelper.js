@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>ReadHelper.js — Leitura Guiada com Lorem Ipsum</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: #fdfdfd;
+      color: #333;
+    }
+    #texto {
+      line-height: 1.7;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    ::selection {
+  background-color: yellow;
+  color: black;
+  /* Opcional: arredondar cantos se suportado (não padrão, mas alguns navegadores aceitam) */
+}
+  </style>
+</head>
+<body>
+
+<h1>ReadHelper.js</h1>
+<p>Leitura guiada por seleção automática — ideal para foco, acessibilidade e aprendizado.</p>
+
+<div id="texto">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <p>
+    Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit,
+    nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.
+  </p>
+</div>
+
+<script src="readhelper.js"></script>
+<script>
+  // Inicializa o ReadHelper no elemento com id="texto"
+  const reader = new ReadHelper('#texto', {
+    delay: 350, // Milissegundos entre cada caractere
+    minDelay: 50,
+    maxDelay: 2000,
+    onComplete: () => {
+      console.log('✅ Leitura concluída!');
+    }
+  });
+</script>
+
+</body>
+</html>
